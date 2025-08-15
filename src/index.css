@@ -2,41 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Hello Kitty & Kuromi Love Confession Design System 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Hello Kitty Theme (Base/Sweet) */
+    --background: 330 100% 96%;
+    --foreground: 0 0% 50%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 50%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 50%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Hello Kitty Pink */
+    --primary: 330 100% 88%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft pastels */
+    --secondary: 280 100% 95%;
+    --secondary-foreground: 0 0% 50%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 330 100% 98%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 280 100% 95%;
+    --accent-foreground: 0 0% 50%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 330 50% 90%;
+    --input: 330 50% 90%;
+    --ring: 330 100% 88%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom Hello Kitty Colors */
+    --kitty-pink: 330 100% 88%;
+    --kitty-white: 0 0% 100%;
+    --kitty-purple: 280 100% 95%;
+    --kitty-gray: 0 0% 50%;
+
+    /* Kuromi Corruption Colors */
+    --kuromi-black: 0 0% 0%;
+    --kuromi-hot-pink: 330 100% 71%;
+    --kuromi-dark-purple: 280 65% 25%;
+    --kuromi-glitch-green: 120 100% 50%;
+
+    /* Gradients */
+    --gradient-sweet: linear-gradient(135deg, hsl(var(--kitty-pink)), hsl(var(--kitty-purple)));
+    --gradient-corruption: linear-gradient(135deg, hsl(var(--kuromi-black)), hsl(var(--kuromi-dark-purple)));
+    --gradient-glitch: linear-gradient(45deg, hsl(var(--kuromi-hot-pink)), hsl(var(--kuromi-glitch-green)));
+
+    /* Animations */
+    --transition-sweet: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-chaos: all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +126,120 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-quicksand;
+  }
+}
+
+@layer components {
+  /* Love Confession Animations */
+  .pulse-heart {
+    animation: pulse-heart 2s ease-in-out infinite;
+  }
+
+  .teleport {
+    transition: var(--transition-chaos);
+  }
+
+  .glitch {
+    animation: glitch 0.5s ease-in-out;
+  }
+
+  .tilt {
+    transform: rotate(-5deg);
+    transition: var(--transition-chaos);
+  }
+
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .confetti {
+    animation: confetti 3s ease-in-out;
+  }
+
+  .corrupted-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="18" font-size="20">💀</text></svg>'), auto;
+  }
+
+  /* Button Variants */
+  .btn-yes {
+    @apply bg-gradient-to-r from-pink-200 to-pink-300 text-pink-800 font-quicksand font-semibold px-8 py-4 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+
+  .btn-yes-final {
+    @apply bg-gradient-to-r from-pink-300 to-pink-400 text-white font-quicksand font-bold px-12 py-6 rounded-3xl shadow-2xl animate-pulse text-2xl;
+  }
+
+  .btn-no {
+    @apply bg-gray-200 text-gray-600 font-quicksand px-4 py-2 rounded-lg transition-all duration-200 hover:bg-gray-300;
+  }
+
+  .btn-no-small {
+    @apply bg-gray-200 text-gray-600 font-quicksand px-2 py-1 rounded-lg transition-all duration-200 text-sm;
+  }
+
+  .heading-sweet {
+    @apply font-quicksand text-4xl md:text-6xl font-bold text-pink-800 mb-8;
+  }
+
+  .heading-corrupted {
+    @apply font-creepster text-4xl md:text-6xl font-bold text-pink-400 mb-8 animate-pulse;
+  }
+
+  .background-sweet {
+    background: hsl(var(--background));
+    transition: var(--transition-sweet);
+  }
+
+  .background-corrupted {
+    background: hsl(var(--kuromi-black));
+    background-image: radial-gradient(hsl(var(--kuromi-dark-purple)) 2px, transparent 2px);
+    background-size: 30px 30px;
+    transition: var(--transition-chaos);
+  }
+}
+
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes glitch {
+  0%, 100% { 
+    transform: translateX(0);
+    filter: hue-rotate(0deg);
+  }
+  20% { 
+    transform: translateX(-2px);
+    filter: hue-rotate(90deg);
+  }
+  40% { 
+    transform: translateX(2px);
+    filter: hue-rotate(180deg);
+  }
+  60% { 
+    transform: translateX(-1px);
+    filter: hue-rotate(270deg);
+  }
+  80% { 
+    transform: translateX(1px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+@keyframes confetti {
+  0% { 
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
   }
 }

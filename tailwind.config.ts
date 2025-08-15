@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'quicksand': ['Quicksand', 'sans-serif'],
+				'creepster': ['Creepster', 'cursive'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Hello Kitty & Kuromi Theme Colors
+				'kitty-pink': 'hsl(var(--kitty-pink))',
+				'kitty-white': 'hsl(var(--kitty-white))',
+				'kitty-purple': 'hsl(var(--kitty-purple))',
+				'kitty-gray': 'hsl(var(--kitty-gray))',
+				'kuromi-black': 'hsl(var(--kuromi-black))',
+				'kuromi-hot-pink': 'hsl(var(--kuromi-hot-pink))',
+				'kuromi-dark-purple': 'hsl(var(--kuromi-dark-purple))',
+				'kuromi-glitch-green': 'hsl(var(--kuromi-glitch-green))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
