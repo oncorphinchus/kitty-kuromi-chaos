@@ -175,9 +175,9 @@ const LoveConfession: React.FC = () => {
   const getHeadingText = () => {
     switch (gameState) {
       case 'final-takeover':
-        return 'YOU SHOULDN\'T HAVE DONE THAT.';
+        return 'YOU SHOULDN\'T HAVE DONE THAT. STUPID NIGGER';
       case 'happy-ending':
-        return 'YAY! I LOVE YOU TOO!';
+        return 'YAY! I LOVE YOU TOO! NIGGABITCH';
       default:
         return 'Do you love me?';
     }
