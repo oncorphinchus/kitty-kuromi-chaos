@@ -163,27 +163,27 @@ All colors MUST be HSL.
 
   /* Button Variants */
   .btn-yes {
-    @apply bg-gradient-to-r from-pink-200 to-pink-300 text-pink-800 font-quicksand font-semibold px-8 py-4 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl;
+    @apply bg-primary text-primary-foreground font-quicksand font-semibold px-8 py-4 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl;
   }
 
   .btn-yes-final {
-    @apply bg-gradient-to-r from-pink-300 to-pink-400 text-white font-quicksand font-bold px-12 py-6 rounded-3xl shadow-2xl animate-pulse text-2xl;
+    @apply bg-kuromi-hot-pink text-kitty-white font-quicksand font-bold px-12 py-6 rounded-3xl shadow-2xl animate-pulse text-2xl;
   }
 
   .btn-no {
-    @apply bg-gray-200 text-gray-600 font-quicksand px-4 py-2 rounded-lg transition-all duration-200 hover:bg-gray-300;
+    @apply bg-muted text-muted-foreground font-quicksand px-4 py-2 rounded-lg transition-all duration-200 hover:bg-secondary;
   }
 
   .btn-no-small {
-    @apply bg-gray-200 text-gray-600 font-quicksand px-2 py-1 rounded-lg transition-all duration-200 text-sm;
+    @apply bg-muted text-muted-foreground font-quicksand px-2 py-1 rounded-lg transition-all duration-200 text-sm;
   }
 
   .heading-sweet {
-    @apply font-quicksand text-4xl md:text-6xl font-bold text-pink-800 mb-8;
+    @apply font-quicksand text-4xl md:text-6xl font-bold text-foreground mb-8;
   }
 
   .heading-corrupted {
-    @apply font-creepster text-4xl md:text-6xl font-bold text-pink-400 mb-8 animate-pulse;
+    @apply font-creepster text-4xl md:text-6xl font-bold text-kuromi-hot-pink mb-8 animate-pulse;
   }
 
   .background-sweet {
